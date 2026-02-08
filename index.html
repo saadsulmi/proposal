@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love ❤️</title>
+ <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+      h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 30px;
+    }
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      opacity: 0.95;
+    }
+
+    p, button, .final-msg, input {
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+    }
+    h4 {
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-size: 5px;
+    }
+
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ed425e, #e376a4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #fff;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .heart {
+      font-size: 80px;
+      animation: pop 1s ease-in-out infinite;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    .proposal {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .btn-group {
+      gap: 20px;
+      margin-top: 20px;
+      margin-left: -140px;
+      height: 80px;
+    }
+
+#noBtn {
+  position: fixed;
+  background: #ffffff;
+  color: #000;
+  transition: top 0.3s ease, left 0.3s ease;
+}
+
+    #yesBtn {
+      background: #fff;
+      color: #ff4d6d;
+    }
+
+    img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    .final-msg {
+      font-size: 18px;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    .error {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="beloved.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <!-- Name Section -->
+  <div id="nameSection">
+    <h2>Hello, my love <br> Enter your name 💖</h2>
+    <input type="text" id="nameInput"  placeholder="The name that owns my heart ❤️"/>
+    <button onclick="checkName()">Submit</button>
+    <h4 class="error" id="errorMsg"></h4>
+  </div>
+
+  <!-- Hearts -->
+  <div id="heartSection" class="hidden">
+    <div class="heart">❤️</div>
+    <br>
+    <p>Every heartbeat whispers your name 💓</p>
+  </div>
+
+  <!-- Proposal -->
+  <div id="proposalSection" class="hidden">
+    <div class="heart">💘</div>
+    <br>
+    <h1>
+      In this lifetime and every next one…<br/>
+      will you marry me, my love? 💍❤️
+    </h1>
+    <br>
+    <div class="btn-group">
+      <button id="yesBtn" onclick="sayYes()">YES 😍</button>
+      <button id="noBtn" style="margin-left: 10px;">NO 🙈</button>
+    </div>
+  </div>
+
+  <!-- Final -->
+  <div id="finalSection" class="hidden">
+    <img src="1000228875.png" alt="Us ❤️"/>
+    <div class="final-msg">
+      <h3>
+  I knew your heart would choose me 💘<br/>
+  Thank you for saying YES to forever ❤️<br/>
+  I promise to love you louder than my fears,<br/>
+  deeper than my words,<br/>
+  and more than anything in this world 💕<br/>
+  Sorry for the song note Babe<br/><br/>
+  I love you. Always. 🌹
+  </h3>
+</div>
+
+  </div>
+
+</div>
+
+<script>
+  const correctName = "JASNA";
+
+  function checkName() {
+    const input = document.getElementById("nameInput").value.trim();
+    const error = document.getElementById("errorMsg");
+    const errorMessages = [
+      "Ah ah 😝 not you… only my love knows this secret 💕",
+      "Nice try 😏 but my heart says nope 💓",
+      "Hmm… that name didn’t make my heart skip a beat 💔",
+      "Close… but not close enough, my love 😉",
+      "Oops 🙈 only ONE name owns my heart ❤️",
+      "Nope 😌 this page opens only for my forever person 💍"
+    ];
+    if (input.toLowerCase() !== correctName.toLowerCase()) {
+      const randomMsg =
+      errorMessages[Math.floor(Math.random() * errorMessages.length)];
+      error.innerText = randomMsg;
+    } else {
+      document.getElementById("nameSection").classList.add("hidden");
+      document.getElementById("heartSection").classList.remove("hidden");
+
+      setTimeout(() => {
+        document.getElementById("heartSection").classList.add("hidden");
+        document.getElementById("proposalSection").classList.remove("hidden");
+      }, 2000);
+    }
+  }
+  document.addEventListener("mousemove", (e) => {
+    const rect = noBtn.getBoundingClientRect();
+    const distance = Math.hypot(
+      rect.x - e.clientX,
+      rect.y - e.clientY
+    );
+
+    if (distance < 20) {
+      moveNoButton();
+    }
+  });
+
+  const noBtn = document.getElementById("noBtn");
+
+  function moveNoButton() {
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+
+    const maxX = window.innerWidth - btnWidth;
+    const maxY = window.innerHeight - btnHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.left = `${randomX}px`;
+    noBtn.style.top = `${randomY}px`;
+  }
+
+  // Desktop
+  noBtn.addEventListener("mouseover", moveNoButton);
+
+  // Mobile
+  noBtn.addEventListener("touchstart", moveNoButton);
+
+  function sayYes() {
+    document.getElementById("proposalSection").classList.add("hidden");
+    document.getElementById("finalSection").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
