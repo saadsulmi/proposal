@@ -200,7 +200,7 @@
 </div>
 
 <script>
-  const correctName = "JASNA";
+  const correctName = ["JASNA" , "JASU" , "KANNAN" , "JASUTTAN" , "JAZ" , "JAS" , "JASUTTOOO"];
 
   function checkName() {
     document.getElementById("bgMusic").play();
@@ -214,7 +214,7 @@
       "Oops 🙈 only ONE name owns my heart ❤️",
       "Nope 😌 this page opens only for my forever person 💍"
     ];
-    if (input.toLowerCase() !== correctName.toLowerCase()) {
+    if (!correctName.includes(input.toUpperCase())) {
       const randomMsg =
       errorMessages[Math.floor(Math.random() * errorMessages.length)];
       error.innerText = randomMsg;
